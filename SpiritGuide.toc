@@ -1,0 +1,10 @@
+## Interface: 11302
+## Title: SpiritGuide
+## Notes: Whisper addon for Bloodlust
+## Author: Gerlach
+## Version: 0.1
+## SavedVariables: SpiritGuide
+## SavedVariablesPerCharacter: SpiritGuideBool
+
+SpiritGuide.lua
+SpiritGuide.xml

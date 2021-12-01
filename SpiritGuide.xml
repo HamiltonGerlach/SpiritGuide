@@ -1,0 +1,48 @@
+<Frame name="SpiritGuide">
+    <EditBox name="SpiritGuideEdit" letters="80" autoFocus="true" historyLines="10">
+        <Size x="120" y="32" />
+        <Anchors>
+            <Anchor point="CENTER">
+                <Offset x="0" y="80" />
+            </Anchor>
+        </Anchors>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture file="Interface\ChatFrame\UI-ChatInputBorder-Left" alpha="0.9">
+                    <Size x="75" y="32" />
+                    <Anchors>
+                        <Anchor point="LEFT">
+                            <Offset x="-15" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0" right="0.2" top="0" bottom="1.0"/>
+                </Texture>
+                <Texture file="Interface\ChatFrame\UI-ChatInputBorder-Right" alpha="0.9">
+                    <Size x="75" y="32" />
+                    <Anchors>
+                        <Anchor point="RIGHT">
+                            <Offset x="15" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0.7" right="1.0" top="0" bottom="1.0"/>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnLoad>
+                self:Hide();
+            </OnLoad>
+            <OnEscapePressed>
+                self:Hide();
+            </OnEscapePressed>
+            <OnEnterPressed>
+                SpiritGuide = self:GetText();
+                self:ClearFocus();
+                self:Hide();
+                EditMacro(73, nil, nil, "/w " .. SpiritGuide ..  " ~ BLOODLUST NOW ~");
+            </OnEnterPressed>
+        </Scripts>
+        <FontString inherits="GameFontNormal" />
+    </EditBox>
+
+</Frame>
